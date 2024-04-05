@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="First Commit. &#10;&#10;The two class files are the result of me cleaning up the original classes file and moving it over to the blackjackClasses file.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blackjackClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/blackjackClasses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.maddyhome.idea.vim.ui.VimEmulationConfigurable&quot;
   }
 }</component>
   <component name="RunManager">
@@ -99,11 +98,40 @@
       <option name="project" value="LOCAL" />
       <updated>1711982180000</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second Commit:&#10;&#10;Finished classes, set up a test main, making sure everything works now. classes file deleted.">
+      <option name="closed" value="true" />
+      <created>1712206189541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712206189542</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted.">
+      <option name="closed" value="true" />
+      <created>1712206234817</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712206234817</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit. &#10;&#10;The two class files are the result of me cleaning up the original classes file and moving it over to the blackjackClasses file." />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit. &#10;&#10;The two class files are the result of me cleaning up the original classes file and moving it over to the blackjackClasses file." />
+    <MESSAGE value="Second Commit:&#10;&#10;Finished classes, set up a test main, making sure everything works now. classes file deleted." />
+    <MESSAGE value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
   </component>
 </project>

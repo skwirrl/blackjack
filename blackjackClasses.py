@@ -124,14 +124,17 @@ class Player:
         self.hand = []
         self.hand_value = 0
         self.is_bust = False
+        self.d_from_blackjack = 21
 
     def set_hand_value(self):
+        check = [card.value for card in self.hand]
+        print(check)
         hand_value = sum(card.value for card in self.hand)
         aces = [card for card in self.hand if card.is_ace]
         for ace in aces:
             if hand_value > 21:
                 ace.value = 1
-                hand_value -= 10
+                hand_value = sum(card.value for card in self.hand)
             else:
                 break
         self.hand_value = hand_value
@@ -204,28 +207,17 @@ class Dealer(Player):
                 crd_mngr.deal_card(self)
                 self.set_hand_value()
                 self.display_hand()
-                sleep(1)
+
 
 
 class GameStateManager:
     def __init__(self):
         self.run = True
         self.players_done = False
-        self.state = vars(self)
-
-    def report_state(self):
-        for k, v in vars(self).items():
-            print_sleep(f"{k}: {v}")
-
-    def update_state(self, last_action: str, state: bool):
-        self.state[last_action] = state
 
     def reset_state(self):
-        for k in self.state.keys():
-            if k == "Run":
-                self.state[k] = True
-            else:
-                self.state[k] = False
+        self.run = True
+        self.players_done = False
 
 
 class GameManager:
@@ -233,6 +225,8 @@ class GameManager:
         self.crd_mngr = CardManager()
 
         self.bt_mngr = BetManager()
+
+        self.state_mngr = GameStateManager()
 
         self.players = []
         self.dealer = Dealer()
@@ -242,48 +236,54 @@ class GameManager:
         self.p_hand = self.player.hand
         self.players.append(self.player)
 
-        self.state_mngr = GameStateManager()
-        self.state = self.state_mngr.state
+
+
+
+    def player_wins(self):
+        self.player.money += self.bt_mngr.pot_value
+        print_sleep("You Won!")
+        print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied")
+        print_sleep(f"You received ${self.bt_mngr.pot_value}!")
+        self.bt_mngr.pot_value = 0
+        self.reset()
+
+    def dealer_wins(self):
+        print_sleep("You Lost!")
+        print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied!")
+        print_sleep("Ouch!")
+        self.bt_mngr.pot_value = 0
+        self.reset()
+
+    def push(self):
+        self.player.money += self.bt_mngr.pot_value / 2
+        print_sleep("Push!")
+        print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied")
+        print_sleep(f"Your bet of ${self.bt_mngr.pot_value / 2} was returned.")
+        self.bt_mngr.pot_value = 0
+        self.reset()
 
     def end_check(self):
-        if self.player.is_bust or (self.state_mngr.players_done and
-                                   self.dealer.hand_value >
-                                   self.player.hand_value):
-            self.end_handler("Dealer Wins")
-        elif self.dealer.is_bust or (self.state_mngr.players_done and
-                                     self.player.hand_value >
-                                     self.player.hand_value):
-            self.end_handler("Player Wins")
-        elif (self.state_mngr.players_done and
-              self.player.hand_value
-              == self.dealer.hand_value):
-            self.end_handler("Push")
+        if self.player.is_bust:
+            self.dealer_wins()
+            return True
+        elif self.dealer.is_bust:
+            self.player_wins()
+            return True
+        if self.state_mngr.players_done:
+            for player in self.players:
+                player.d_from_blackjack = 21 - player.hand_value
+                print(player.d_from_blackjack)
+            if self.dealer.d_from_blackjack < self.player.d_from_blackjack:
+                self.dealer_wins()
+                return True
+            elif self.player.d_from_blackjack < self.dealer.d_from_blackjack:
+                self.player_wins()
+                return True
+            elif self.player.d_from_blackjack == self.dealer.d_from_blackjack:
+                self.push()
+                return True
         else:
-            self.end_handler(False)
-
-    def end_handler(self, end_check):
-        if not end_check:
             return False
-        elif end_check == "Dealer Wins":
-            print_sleep("You Lost!")
-            print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied!")
-            print_sleep("Ouch!")
-            self.bt_mngr.pot_value = 0
-            return True
-        elif end_check == "Player Wins":
-            self.player.money += self.bt_mngr.pot_value
-            print_sleep("You Won!")
-            print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied")
-            print_sleep(f"You received ${self.bt_mngr.pot_value}!")
-            self.bt_mngr.pot_value = 0
-            return True
-        elif end_check == "Push":
-            self.player.money += self.bt_mngr.pot_value / 2
-            print_sleep("Push!")
-            print_sleep(f"Pot of ${self.bt_mngr.pot_value} emptied")
-            print_sleep(f"Your bet of ${self.bt_mngr.pot_value / 2} was returned.")
-            self.bt_mngr.pot_value = 0
-            return True
 
     def reset(self):
         while True:
@@ -294,9 +294,11 @@ class GameManager:
                 continue
             elif restart == "y":
                 print_sleep("Resetting...")
+                self.dealer.hand[0].flip_card()
                 self.dealer.reset_hand(self.crd_mngr)
                 self.player.reset_hand(self.crd_mngr)
                 self.crd_mngr.shuffle_deck()
+                self.state_mngr.reset_state()
                 return True
             elif restart == "n":
                 print_sleep("Thanks for playing!")
@@ -305,18 +307,47 @@ class GameManager:
 
 def main():
     game = GameManager()
-    while True:
+    while game.state_mngr.run:
         game.bt_mngr.take_bets(game.player)
         game.crd_mngr.deal_hands(game.dealer, game.player)
         game.player.hit_loop(game.crd_mngr)
-        if not game.end_check():
-            game.dealer.hit_loop(game.crd_mngr)
-            game.state_mngr.players_done = True
-        game.end_check()
-        if game.reset():
-            continue
+        if game.player.is_bust:
+            game.dealer_wins()
+            if game.reset():
+                continue
+            else:
+                break
         else:
-            break
+            game.dealer.hit_loop(game.crd_mngr)
+            if game.dealer.is_bust:
+                game.player_wins()
+                if game.reset():
+                    continue
+                else:
+                    break
+            else:
+                for player in game.players:
+                    player.d_from_blackjack = 21 - player.hand_value
+                if game.player.d_from_blackjack < game.dealer.d_from_blackjack:
+                    game.player_wins()
+                    if game.reset():
+                        continue
+                    else:
+                        break
+                elif game.dealer.d_from_blackjack < game.player.d_from_blackjack:
+                    game.dealer_wins()
+                    if game.reset():
+                        continue
+                    else:
+                        break
+                else:
+                    game.push()
+                    if game.reset():
+                        continue
+                    else:
+                        break
+
+
 
 
 main()

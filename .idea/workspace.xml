@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted.">
+    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand.">
+      <change afterPath="$PROJECT_DIR$/blackjack01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blackjackClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/blackjackClasses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;skwirrl&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/skwirrl/blackjack&quot;,
+    &quot;accountId&quot;: &quot;f1606a1b-3e44-4fd9-90fa-07a93797d81c&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -35,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.blackjack01.executor&quot;: &quot;Run&quot;,
     &quot;Python.blackjackClasses.executor&quot;: &quot;Run&quot;,
     &quot;Python.blackjackgame.executor&quot;: &quot;Run&quot;,
     &quot;Python.cardClass.executor&quot;: &quot;Run&quot;,
@@ -46,7 +59,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="blackjackClasses" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="blackjack01" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="blackjack" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,7 +72,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blackjackClasses.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blackjack01.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,14 +83,14 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.blackjackClasses" />
+        <item itemvalue="Python.blackjack01" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -114,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712206234817</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand.">
+      <option name="closed" value="true" />
+      <created>1712322497414</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712322497414</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +153,7 @@
     <MESSAGE value="First Commit. &#10;&#10;The two class files are the result of me cleaning up the original classes file and moving it over to the blackjackClasses file." />
     <MESSAGE value="Second Commit:&#10;&#10;Finished classes, set up a test main, making sure everything works now. classes file deleted." />
     <MESSAGE value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
+    <MESSAGE value="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand." />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand." />
   </component>
 </project>

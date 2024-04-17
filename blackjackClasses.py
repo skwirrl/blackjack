@@ -265,25 +265,25 @@ class GameManager:
     def end_check(self):
         if self.player.is_bust:
             self.dealer_wins()
-            return True
+            return self.reset()
         elif self.dealer.is_bust:
             self.player_wins()
-            return True
+            return self.reset()
         if self.state_mngr.players_done:
             for player in self.players:
                 player.d_from_blackjack = 21 - player.hand_value
                 print(player.d_from_blackjack)
             if self.dealer.d_from_blackjack < self.player.d_from_blackjack:
                 self.dealer_wins()
-                return True
+                return self.reset()
             elif self.player.d_from_blackjack < self.dealer.d_from_blackjack:
                 self.player_wins()
-                return True
+                return self.reset()
             elif self.player.d_from_blackjack == self.dealer.d_from_blackjack:
                 self.push()
-                return True
+                return self.reset()
         else:
-            return False
+            pass
 
     def reset(self):
         while True:
@@ -311,41 +311,11 @@ def main():
         game.bt_mngr.take_bets(game.player)
         game.crd_mngr.deal_hands(game.dealer, game.player)
         game.player.hit_loop(game.crd_mngr)
-        if game.player.is_bust:
-            game.dealer_wins()
-            if game.reset():
-                continue
-            else:
-                break
+        if game.end_check():
+            continue
         else:
-            game.dealer.hit_loop(game.crd_mngr)
-            if game.dealer.is_bust:
-                game.player_wins()
-                if game.reset():
-                    continue
-                else:
-                    break
-            else:
-                for player in game.players:
-                    player.d_from_blackjack = 21 - player.hand_value
-                if game.player.d_from_blackjack < game.dealer.d_from_blackjack:
-                    game.player_wins()
-                    if game.reset():
-                        continue
-                    else:
-                        break
-                elif game.dealer.d_from_blackjack < game.player.d_from_blackjack:
-                    game.dealer_wins()
-                    if game.reset():
-                        continue
-                    else:
-                        break
-                else:
-                    game.push()
-                    if game.reset():
-                        continue
-                    else:
-                        break
+            break
+
 
 
 

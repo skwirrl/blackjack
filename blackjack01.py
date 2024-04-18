@@ -107,9 +107,12 @@ class Player:
                     continue
 
     def place_bets(self):
+        print("=====================")
         print(f"Minimum bet is ${Game.MINIMUM_BET}.")
+        print("=====================")
         while True:
-            bet = input(f"{self.name}, how much would you like to bet?")
+            print(f"{self.name}, you have ${self.money}")
+            bet = input("How much would you like to bet?")
             if not bet.isdigit():
                 print(f"Please enter a number above {Game.MINIMUM_BET}")
                 continue
@@ -252,13 +255,14 @@ class Game:
                     player.pot = 0
                 case "Push":
                     print("Push!")
-                    print(f"{player.name}'s bet of ${player.pot / 2}"
-                          "was returned.")
+                    print(f"{player.name}'s bet of ${int(player.pot / 2)}"
+                          " was returned.")
                     player.money += player.pot / 2
 
     def reset(self):
         self.not_bust.clear()
         self.bust_count = 0
+        self.end_early = False
         for player in self.player_list:
             while player.hand:
                 returned_card = player.hand.pop(0)
@@ -287,6 +291,14 @@ def main():
     game.initialize_players()
     while True:
         for p in game.not_bust:
+            if p.money < game.MINIMUM_BET:
+                print("You are out of money!")
+                print("Better luck next time.")
+                game.player_list.remove(p)
+                game.not_bust.remove(p)
+                if not game.not_bust:
+                    print("Thanks for playing!")
+                    sys.exit()
             p.place_bets()
         game.deck.deal_hands(game.player_list)
         for p in game.player_list:

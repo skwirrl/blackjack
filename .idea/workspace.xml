@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand.">
-      <change afterPath="$PROJECT_DIR$/blackjack01.py" afterDir="false" />
+    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackjackClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/blackjackClasses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712322497414</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon.">
+      <option name="closed" value="true" />
+      <created>1713368852866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713368852866</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +160,7 @@
     <MESSAGE value="Second Commit:&#10;&#10;Finished classes, set up a test main, making sure everything works now. classes file deleted." />
     <MESSAGE value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
     <MESSAGE value="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand." />
-    <option name="LAST_COMMIT_MESSAGE" value="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand." />
+    <MESSAGE value="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon." />
   </component>
 </project>

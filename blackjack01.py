@@ -192,6 +192,7 @@ class Game:
         self.dealer = Dealer()
         self.player_list = []
         self.not_bust = []
+        self.end_early = False
         self.deck = Deck()
         self.bust_count = 0
 
@@ -257,6 +258,7 @@ class Game:
 
     def reset(self):
         self.not_bust.clear()
+        self.bust_count = 0
         for player in self.player_list:
             while player.hand:
                 returned_card = player.hand.pop(0)
@@ -265,6 +267,19 @@ class Game:
             if not player.name == "Dealer":
                 self.not_bust.append(player)
         self.deck.shuffle_deck()
+
+    @staticmethod
+    def restart_check():
+        while True:
+            restart = input("Would you like to play again? (Y/N)\n")
+            restart = restart.strip().lower()[0]
+            if restart != "y" and restart != "n":
+                print("Please choose either 'y' or 'n'!")
+                continue
+            if restart == "n":
+                return False
+            else:
+                return True
 
 
 def main():
@@ -277,27 +292,26 @@ def main():
         for p in game.player_list:
             if game.bust_count == len(game.player_list) - 1:
                 print("All Players Busted!")
+                game.end_early = True
                 break
             p.hit_loop(game.deck)
             if p.is_bust:
                 game.player_busts(p)
                 game.bust_count += 1
-        game.end_check()
-        while True:
-            restart = input("Would you like to play again? (Y/N)\n")
-            restart = restart.strip().lower()[0]
-            if restart != "y" and restart != "n":
-                print("Please choose either 'y' or 'n'!")
+                if p.name == "Dealer":
+                    game.end_early = True
+        if game.end_early:
+            if game.restart_check():
+                game.reset()
                 continue
-            break
-        if restart == "y":
+            else:
+                print("Thanks for playing!")
+                sys.exit()
+        game.end_check()
+        if game.restart_check():
             game.reset()
-            for i, v in vars(game).items():
-                print(i, ":", v)
             continue
-        else:
-            print("Thanks for playing!")
-            sys.exit()
+
 
 
 if __name__ == "__main__":

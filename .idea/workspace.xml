@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon.">
+    <list default="true" id="a7928026-72bd-435d-a1f7-1bbe1df992d0" name="Changes" comment="Sixth Commit&#10;&#10;Again, I think it's working. Modified the reset method, made some qol and formatting fixes, next going to incorporate a wait into print statements to make things easier to follow.">
+      <change afterPath="$PROJECT_DIR$/blackjackFunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackjack01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackjackClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/blackjackClasses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +41,16 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2eKknbSEnujMovt5mPINh0qBaSc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Python.blackjack01.executor&quot;: &quot;Run&quot;,
     &quot;Python.blackjackClasses.executor&quot;: &quot;Run&quot;,
     &quot;Python.blackjackgame.executor&quot;: &quot;Run&quot;,
@@ -57,7 +63,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="blackjack01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="blackjackClasses" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="blackjack" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blackjack01.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blackjackClasses.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.blackjack01" />
+        <item itemvalue="Python.blackjackClasses" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +147,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713368852866</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fifth Commit&#10;&#10;Actually not totally working. made changes to Game class and main function, looking into the dealer hit_loop and the end logic.">
+      <option name="closed" value="true" />
+      <created>1713451450517</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713451450517</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Sixth Commit&#10;&#10;Again, I think it's working. Modified the reset method, made some qol and formatting fixes, next going to incorporate a wait into print statements to make things easier to follow.">
+      <option name="closed" value="true" />
+      <created>1713452394143</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713452394143</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,11 +178,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit. &#10;&#10;The two class files are the result of me cleaning up the original classes file and moving it over to the blackjackClasses file." />
     <MESSAGE value="Second Commit:&#10;&#10;Finished classes, set up a test main, making sure everything works now. classes file deleted." />
     <MESSAGE value="Second Commit:&#10;&#10;Finished the classes in the new blackjackClasses file. Set up a test main, making sure everything works now. Classes file deleted." />
     <MESSAGE value="Third commit&#10;&#10;Not even sure I should commit this, something is wrong with the logic for ending each round. There also seems to be some issue with resetting the dealers hand." />
     <MESSAGE value="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth Commit&#10;Much better! As in, I think it actually works. blackjack01.py is the main file now, will probably do some renaming soon." />
+    <MESSAGE value="Fifth Commit&#10;&#10;Actually not totally working. made changes to Game class and main function, looking into the dealer hit_loop and the end logic." />
+    <MESSAGE value="Sixth Commit&#10;&#10;Again, I think it's working. Modified the reset method, made some qol and formatting fixes, next going to incorporate a wait into print statements to make things easier to follow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sixth Commit&#10;&#10;Again, I think it's working. Modified the reset method, made some qol and formatting fixes, next going to incorporate a wait into print statements to make things easier to follow." />
   </component>
 </project>
